@@ -359,6 +359,7 @@
                     <!-- Install the unofficial version from https://github.com/JD-CSTx/license-maven-plugin -->
                     <!-- mvn license:third-party-report -->
                     <!-- mvn license:aggregate-download-licenses -->
+                    <!--
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>license-maven-plugin</artifactId>
@@ -385,7 +386,9 @@
                             </licenseMerges>
                         </configuration>
                     </plugin>
+                    -->
                     <!-- LGPL requirement, copy spotbugs sources jar -->
+                    <!--
                     <plugin>
                         <artifactId>maven-dependency-plugin</artifactId>
                         <version>${maven.dependency.plugin.version}</version>
@@ -411,6 +414,7 @@
                             </artifactItems>
                         </configuration>
                     </plugin>
+                    -->
                 </plugins>
             </build>
         </profile>
