@@ -1,0 +1,76 @@
+---
+excludes:
+  scopes:
+  - pattern: "provided"
+    reason: "PROVIDED_DEPENDENCY_OF"
+    comment: "Packages provided at runtime by the JDK or container only."
+  - pattern: "test"
+    reason: "TEST_DEPENDENCY_OF"
+    comment: "Packages for testing only."
+package_configurations:
+- id: "Maven:antlr:antlr:2.7.1"
+  license_finding_curations:
+  - concluded_license: "BSD-3-Clause"
+    reason: "NOT_DETECTED"
+    comment: "License file was not interpreted correctly."
+- id: "Unmanaged::business-partner-agent:7daeb4d12eed7a7fb2f95cfc094f44a05768270f"
+  vcs:
+    type: "Git"
+    url: "https://github.com/bosch-io/business-partner-agent.git"
+    revision: "7daeb4d12eed7a7fb2f95cfc094f44a05768270f"
+  license_finding_curations:
+    - path: "bin/license-maven-plugin/src/main/java/org/codehaus/mojo/license/spdx/SpdxLicenseListData.java"
+      concluded_license: 'CC0-1.0'
+      reason: 'DATA_OF'
+      comment: >-
+        This file contains official SPDX.org license ids. SPDX is licensed under CC0-1.0, see
+        https://github.com/spdx/license-list-XML/blob/master/package.json#L33.
+- id: "NPM::spdx-licenses:0.0.3"
+  source_artifact_url: "https://registry.npmjs.org/spdx-licenses/-/spdx-licenses-0.0.3.tgz"
+  license_finding_curations:
+  - path: "package/spdx.json"
+    concluded_license: 'CC0-1.0'
+    reason: 'DATA_OF'
+    comment: >-
+      This file contains official SPDX.org license ids. SPDX is licensed under CC0-1.0, see
+      https://github.com/spdx/license-list-XML/blob/master/package.json#L33.
+- id: "NPM::spdx-ranges:1.0.1"
+  source_artifact_url: "https://registry.npmjs.org/spdx-ranges/-/spdx-ranges-1.0.1.tgz"
+  license_finding_curations:
+  - path: "package/index.json"
+    concluded_license: 'CC0-1.0'
+    reason: 'DATA_OF'
+    comment: >-
+      This file contains official SPDX.org license ids. SPDX is licensed under CC0-1.0, see
+      https://github.com/spdx/license-list-XML/blob/master/package.json#L33.
+- id: "NPM::spdx-expression-parse:1.0.4"
+  source_artifact_url: "https://registry.npmjs.org/spdx-expression-parse/-/spdx-expression-parse-1.0.4.tgz"
+  license_finding_curations:
+  - path: "package/parser.js"
+    concluded_license: 'CC0-1.0'
+    reason: 'DATA_OF'
+    comment: >-
+      This file contains official SPDX.org license ids. SPDX is licensed under CC0-1.0, see
+      https://github.com/spdx/license-list-XML/blob/master/package.json#L33.
+- id: "NPM::spdx:0.5.2"
+  source_artifact_url: "https://registry.npmjs.org/spdx/-/spdx-0.5.2.tgz"
+  license_finding_curations:
+  - path: "package/parser.js"
+    concluded_license: 'CC0-1.0'
+    reason: 'DATA_OF'
+    comment: >-
+      This file contains official SPDX.org license ids. SPDX is licensed under CC0-1.0, see
+      https://github.com/spdx/license-list-XML/blob/master/package.json#L33.
+resolutions:
+  vulnerabilities:
+  - id: "sonatype-2020-1349"
+    reason: "INEFFECTIVE_VULNERABILITY"
+    comment: "Already fixed in this version"
+resolutions:
+  vulnerabilities:
+  - id: "CVE-2022-37865"
+    reason: "MITIGATED_VULNERABILITY"
+    comment: "Mitigated by PR123"
+  - id: "CVE-2022-37866"
+    reason: "INVALID_MATCH_VULNERABILITY"
+    comment: "Scanner did identify wrong component"
