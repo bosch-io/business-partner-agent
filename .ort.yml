@@ -66,8 +66,6 @@ resolutions:
   - id: "sonatype-2020-1349"
     reason: "INEFFECTIVE_VULNERABILITY"
     comment: "Already fixed in this version"
-resolutions:
-  vulnerabilities:
   - id: "CVE-2022-37865"
     reason: "MITIGATED_VULNERABILITY"
     comment: "Mitigated by PR123"
